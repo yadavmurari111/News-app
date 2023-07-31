@@ -3,6 +3,7 @@ export interface ISearchNewsInterface {
 }
 export interface ISearchNewsTemplateInterface {
   componentId: string;
+  loading: boolean;
   searchText: string;
   searchData: [];
   getSearchText(data: string): void;

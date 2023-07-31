@@ -16,7 +16,6 @@ const AppHeaderComponent: FunctionComponent<IAppHeaderInterface> = ({
         options: {
           topBar: {
             visible: true,
-            background: {color: presetBase.colors.redSmooth},
             title: {text: 'Settings'},
           },
           bottomTabs: {visible: false},

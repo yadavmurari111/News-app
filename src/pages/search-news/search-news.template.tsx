@@ -2,6 +2,7 @@ import React, {FunctionComponent} from 'react';
 import {
   Button,
   FlatList,
+  ProgressBarAndroid,
   Text,
   TextInput,
   TouchableOpacity,
@@ -15,6 +16,7 @@ import NewsCardComponent from '../../components/news-card/news-card.component';
 
 const SearchNewsTemplate: FunctionComponent<ISearchNewsTemplateInterface> = ({
   componentId,
+  loading,
   searchText,
   searchData,
   getSearchText,
@@ -22,7 +24,7 @@ const SearchNewsTemplate: FunctionComponent<ISearchNewsTemplateInterface> = ({
 }: ISearchNewsTemplateInterface) => {
   console.log(searchData, 'searchData-- in template');
 
-  const renderSearchItem = ({item}) => {
+  const renderSearchItem = ({item}: any) => {
     return <NewsCardComponent componentId={componentId} props={item} />;
   };
 
@@ -50,7 +52,8 @@ const SearchNewsTemplate: FunctionComponent<ISearchNewsTemplateInterface> = ({
           <Text>Search</Text>
         </TouchableOpacity>
       </View>
-      <FlatList data={searchData} renderItem={renderSearchItem} />
+      {!loading && <FlatList data={searchData} renderItem={renderSearchItem} />}
+      {loading && <ProgressBarAndroid />}
     </View>
   );
 };

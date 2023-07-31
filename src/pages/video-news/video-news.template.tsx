@@ -15,7 +15,7 @@ const VideoNewsTemplate: FunctionComponent<IVideoNewsTemplateInterface> = ({
   componentId,
   videoIds,
 }: IVideoNewsTemplateInterface) => {
-  const renderVideoItem = ({item}) => {
+  const renderVideoItem = ({item}: any) => {
     return <VideoItem componentId={componentId} videoId={item} />;
   };
 
@@ -57,15 +57,15 @@ const VideoItem: FunctionComponent<IVideoNewsItemInterface> = ({
           videoId={videoId}
           onChangeState={onStateChange}
         />
+        <Button title={playing ? 'pause' : 'play'} onPress={togglePlaying} />
       </View>
-      <Button title={playing ? 'pause' : 'play'} onPress={togglePlaying} />
     </View>
   );
 };
 
-export const listFooterComponent = () => {
+const listFooterComponent = () => {
   return (
-    <View style={{paddingVertical: 50, flex: 1, alignItems: 'center'}}>
+    <View style={styles.footer}>
       <LabelComponent
         color={presetBase.colors.black}
         variant={ETypographyVariant.SMALL_SEMIBOLD}>

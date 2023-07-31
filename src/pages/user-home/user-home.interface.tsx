@@ -3,6 +3,8 @@ export interface IUserHomeInterface {
 }
 export interface IUserHomeTemplateInterface {
   homeFeedData: [];
+  loading: boolean;
+  selectedCategoryIndex: number;
   componentId: string;
-  // onMuscleGroupPress(data: any): void;
+  onSwitchNewsCategory(category: string, index: number): void;
 }

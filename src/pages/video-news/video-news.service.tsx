@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const YOUTUBE_API_KEY = 'AIzaSyDTmsku3M2854Ncj1rdokZEYw-r3QA30QY';
-const NEWS_CATEGORY = 'news shorts'; // Replace with the specific news category you want to search for
+const NEWS_CATEGORY = 'Indian news shorts'; // Replace with the specific news category you want to search for
 
 async function fetchYouTubeVideoIds() {
   try {
@@ -17,8 +17,6 @@ async function fetchYouTubeVideoIds() {
       },
     );
 
-    console.log(response, 'video data-----------');
-
     return response.data.items.map(
       (item: {id: {videoId: any}}) => item.id.videoId,
     );
@@ -29,3 +27,16 @@ async function fetchYouTubeVideoIds() {
 }
 
 export default fetchYouTubeVideoIds;
+
+export const SampleVideoIdData = [
+  'yr_COent3wY',
+  '8CCI_M_Mnes',
+  '_HGQZlK08gQ',
+  'Hz2F_S3Tl0Y',
+  'lqiOEwbB93w',
+  'Ovzx0F9es-g',
+  '69CFHCkIjXw',
+  'Xuf3VtSTAPY',
+  'VXcA6Fw7J60',
+  'JlRgzWpaXQ4',
+];
