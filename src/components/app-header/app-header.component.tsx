@@ -3,6 +3,7 @@ import {IAppHeaderInterface} from './app-header.interface';
 import AppHeaderTemplate from './app-header.template';
 import {Navigation} from 'react-native-navigation';
 import ROUTE_NAME from '../../navigation/navigation-constants';
+import {presetBase} from '../../utils/color';
 
 const AppHeaderComponent: FunctionComponent<IAppHeaderInterface> = ({
   componentId,
@@ -13,7 +14,11 @@ const AppHeaderComponent: FunctionComponent<IAppHeaderInterface> = ({
         passProps: {},
         name: ROUTE_NAME.APP_SETTINGS,
         options: {
-          topBar: {visible: true, title: {text: 'Settings'}},
+          topBar: {
+            visible: true,
+            background: {color: presetBase.colors.redSmooth},
+            title: {text: 'Settings'},
+          },
           bottomTabs: {visible: false},
         },
       },

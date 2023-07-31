@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
     borderColor: presetBase.colors.grey80,
     marginVertical: 15,
     overflow: 'hidden',
-    backgroundColor: presetBase.colors.redSmooth,
+    backgroundColor: presetBase.colors.grey80,
   },
 });
